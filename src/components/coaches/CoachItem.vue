@@ -3,11 +3,13 @@
     <h3>{{ fullName }}</h3>
     <h4>${{ rate }}/hour</h4>
     <div>
-      <span v-for="area in areas" :key="area">{{ area }}</span>
+      <base-badge v-for="area in areas" :key="area" :type="area" :title="area"></base-badge>
     </div>
-    <div class="action">
-      <router-link :to="coachContactLink">Contact</router-link>
-      <router-link :to="coachDetailsLink">View details</router-link>
+    <div class="actions">
+      <!-- Trỏ tới hàm coachContactLink -->
+      <base-button mode="outline" link :to="coachContactLink">Contact</base-button>
+      <!-- Trỏ tới hàm coachDetailsLink -->
+      <base-button link :to="coachDetailsLink">View details</base-button>
     </div>
   </li>
 </template>
@@ -20,10 +22,10 @@ export default {
             return this.firstName + ' ' + this.lastName;
         },
         coachContactLink() {
-            return '/coaches/' + this.id + '/contact';
+            return '/coaches/' + this.id + '/contact'; // Trả về URL cho coachContact. Vd: /coaches/id1/contact
         },
         coachDetailsLink() {
-            return '/coaches' + this.id;
+            return '/coaches/' + this.id; // Trả về URL cho coachDetail. Vd: /coaches/id1
         }
     }
 };

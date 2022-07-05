@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <section><h1>Filter</h1></section>
-    <section>
+  <section>
+    <base-card>
       <div class="controls">
-        <button>Refresh</button>
-        <router-link to="/register">Register as coach</router-link>
+        <base-button mode="outline">Refresh</base-button>
+        <base-button link to="/register">Register as coach</base-button>
       </div>
       <ul v-if="hasCoaches">
         <coach-item
@@ -18,8 +17,8 @@
         ></coach-item>
       </ul>
       <h3 v-else>No coaches found</h3>
-    </section>
-  </div>
+    </base-card>
+  </section>
 </template>
 
 <script>
