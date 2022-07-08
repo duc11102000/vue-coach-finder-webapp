@@ -27,6 +27,7 @@
 <script>
 import CoachItem from '../../components/coaches/CoachItem.vue';
 import CoachFilter from '../../components/coaches/CoachFilter.vue';
+
 export default {
   components: {
     CoachItem,
