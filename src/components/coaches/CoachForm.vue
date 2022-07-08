@@ -1,35 +1,35 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-control">
-        <label for="firstName">First name</label>
-        <input type="text" id="firstName" v-model.trim="firstName">
+      <label for="firstName">First name</label>
+      <input type="text" id="firstName" v-model.trim="firstName" />
     </div>
     <div class="form-control">
-        <label for="lastName">Last name</label>
-        <input type="text" id="lastName" v-model.trim="lastName">
+      <label for="lastName">Last name</label>
+      <input type="text" id="lastName" v-model.trim="lastName" />
     </div>
     <div class="form-control">
-        <label for="description">Description</label>
-        <input type="textarea" id="description" v-model.trim="description">
+      <label for="description">Description</label>
+      <input type="textarea" id="description" v-model.trim="description" />
     </div>
     <div class="form-control">
-        <label for="rate">Hourly rate</label>
-        <input type="number" id="rate" v-model.number="rate">
+      <label for="rate">Hourly rate</label>
+      <input type="number" id="rate" v-model.number="rate" />
     </div>
     <div class="class-control">
-        <h3>Areas of expertise</h3>
-        <div>
-            <input type="checkbox" id="frontend" value="frontend" v-model="areas">
-            <label for="frontend">Front end development</label>
-        </div>
-        <div>
-            <input type="checkbox" id="backend" value="backend" v-model="areas">
-            <label for="backend">Back end development</label>
-        </div>
-        <div>
-            <input type="checkbox" id="career" value="career" v-model="areas">
-            <label for="career">Career advisory</label>
-        </div>
+      <h3>Areas of expertise</h3>
+      <div>
+        <input type="checkbox" id="frontend" value="frontend" v-model="areas" />
+        <label for="frontend">Front end development</label>
+      </div>
+      <div>
+        <input type="checkbox" id="backend" value="backend" v-model="areas" />
+        <label for="backend">Back end development</label>
+      </div>
+      <div>
+        <input type="checkbox" id="career" value="career" v-model="areas" />
+        <label for="career">Career advisory</label>
+      </div>
     </div>
     <base-button>Register</base-button>
   </form>
@@ -37,29 +37,31 @@
 
 <script>
 export default {
-    data() {
-        return {
-            firstName: '',
-            lastName: '',
-            description: '',
-            rate: '',
-            areas: []
-        }
-    },
+  emit: ['save-data'],
+  data() {
+    return {
+      firstName: '',
+      lastName: '',
+      description: '',
+      rate: null,
+      areas: [],
+    };
+  },
 
-    methods: {
-        submitForm() {
-            const formData = {
-                first: this.firstName,
-                last: this.lastName,
-                desc: this.description,
-                rate: this.rate,
-                areas: this.areas,
-            }
-            console.log(formData);
-        }
-    }
-}
+  methods: {
+    submitForm() {
+      const formData = {
+        first: this.firstName,
+        last: this.lastName,
+        desc: this.description,
+        rate: this.rate,
+        areas: this.areas,
+      };
+      debugger;
+      this.$emit('save-data', formData);
+    },
+  },
+};
 </script>
 
 <style scoped>

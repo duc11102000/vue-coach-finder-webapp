@@ -16,7 +16,7 @@
           :firstName="coach.firstName"
           :lastName="coach.lastName"
           :rate="coach.hourlyRate"
-          :areas="coach.areas"
+          :areas="coach.areas || ['0']"
         ></coach-item>
       </ul>
       <h3 v-else>No coaches found</h3>
@@ -69,6 +69,11 @@ export default {
   methods: {
     setFilters(updatedFilters) {
       this.activeFilters = updatedFilters;
+    }
+  },
+  watch: {
+      filteredCoaches(newQuestion) {
+        console.log(newQuestion, "newQuestion")
     }
   }
 };
