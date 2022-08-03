@@ -15,6 +15,12 @@ export default {
     CoachForm,
   },
 
+  computed: {
+    isCoach() {
+      return this.$store.getters['coaches/isCoach'];
+    }
+  },
+
   methods: {
     saveData(data) {
       //  this.$route.router.go('/coaches');

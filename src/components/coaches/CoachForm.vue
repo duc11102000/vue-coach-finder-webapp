@@ -10,7 +10,7 @@
     </div>
     <div class="form-control">
       <label for="description">Description</label>
-      <input type="textarea" id="description" v-model.trim="description" />
+      <input type="textarea" rows="5" id="description" v-model.trim="description" />
     </div>
     <div class="form-control">
       <label for="rate">Hourly rate</label>
