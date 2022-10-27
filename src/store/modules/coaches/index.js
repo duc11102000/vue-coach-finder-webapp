@@ -10,20 +10,31 @@ export default {
             coaches: [
                 {
                     id: 'c1',
-                    firstName: 'Maximilian',
-                    lastName: 'Schwarzmüller',
-                    areas: ['frontend', 'backend', 'career'],
+                    firstName: 'Nguyễn Văn',
+                    lastName: 'A',
+                    areas: ['frontend'],
                     description:
-                        "I'm Maximilian and I've worked as a freelance web developer for years. Let me help you become a developer as well!",
+                        "Tui là A và tui thích làm front-end :3",
                     hourlyRate: 30
                 },
+                
                 {
                     id: 'c2',
-                    firstName: 'Julie',
-                    lastName: 'Jones',
-                    areas: ['frontend', 'career'],
+                    firstName: 'Lê Thị',
+                    lastName: 'B',
+                    areas: ['backend'],
                     description:
-                        'I am Julie and as a senior developer in a big tech company, I can help you get your first job or progress in your current role.',
+                        'Tui là B tui thích làm back-end :D',
+                    hourlyRate: 30
+                },
+
+                {
+                    id: 'c3',
+                    firstName: 'Ngô Nguyễn',
+                    lastName: 'C',
+                    areas: ['career'],
+                    description:
+                        'Tui là C tui thích làm tư vấn sự nghiệp :v',
                     hourlyRate: 30
                 }
             ]
